@@ -1,114 +1,103 @@
 <template>
   <div class="page">
     <header class="header">
-      <div class="header-content">
-        <img :src="vueLogo" alt="Vue logo" class="logo" />
-        <h1>Projeto Vue</h1>
-      </div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+        alt="Vue logo"
+        class="logo"
+      />
+      <h1>Projeto Vue</h1>
     </header>
 
     <main class="main">
-      <section class="content">
-        <h2>Links do Projeto</h2>
+      <h2>Links do Projeto</h2>
 
-        <div class="links">
-          <a
-            href="https://github.com/Akainor/vue-atividade07"
-            target="_blank"
-            rel="noopener"
-            class="link"
-          >
-            GitHub
-          </a>
+      <div class="links">
+        <a
+          href="https://github.com/Akainor/vue-atividade07"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
 
-          <a
-            href="https://vue-atividade07.vercel.app/"
-            target="_blank"
-            rel="noopener"
-            class="link"
-          >
-            Vercel
-          </a>
-        </div>
-      </section>
+        <a
+          href="https://vue-atividade07.vercel.app/"
+          target="_blank"
+          rel="noopener"
+        >
+          Vercel
+        </a>
+      </div>
     </main>
   </div>
 </template>
 
-<script setup>
-import vueLogo from './assets/logo.svg'
-</script>
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<style scoped>
+/* BASE */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* PAGE */
 .page {
   min-height: 100vh;
-  width: 100%;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
 /* HEADER */
 .header {
   width: 100%;
-  background-color: #2c2c2c;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  background-color: #222;
+  padding: 16px 24px;
 
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .logo {
-  width: 50px;
+  width: 40px;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
+/* MAIN */
 .main {
-  flex: 1;
-  width: 100%;
+  padding: 24px;
 }
 
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+/* TEXT */
+h1 {
+  font-size: 1.8rem;
 }
 
 h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 16px;
 }
 
+/* LINKS */
 .links {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.link {
-  padding: 1rem 2rem;
+.links a {
   background-color: #42b883;
   color: white;
+  padding: 10px 16px;
   text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
-.link:hover {
+.links a:hover {
   background-color: #2f8f68;
-  transform: scale(1.05);
 }
 </style>
