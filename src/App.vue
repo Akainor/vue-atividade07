@@ -1,47 +1,114 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="page">
+    <header class="header">
+      <div class="header-content">
+        <img :src="vueLogo" alt="Vue logo" class="logo" />
+        <h1>Projeto Vue</h1>
+      </div>
+    </header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <main class="main">
+      <section class="content">
+        <h2>Links do Projeto</h2>
 
-  <main>
-    <TheWelcome />
-  </main>
+        <div class="links">
+          <a
+            href="https://github.com/Akainor/vue-atividade07"
+            target="_blank"
+            rel="noopener"
+            class="link"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://vue-atividade07.vercel.app/"
+            target="_blank"
+            rel="noopener"
+            class="link"
+          >
+            Vercel
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 </template>
 
+<script setup>
+import vueLogo from './assets/logo.svg'
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  background-color: #2c2c2c;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  width: 50px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.main {
+  flex: 1;
+  width: 100%;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  padding: 1rem 2rem;
+  background-color: #42b883;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.link:hover {
+  background-color: #2f8f68;
+  transform: scale(1.05);
 }
 </style>
